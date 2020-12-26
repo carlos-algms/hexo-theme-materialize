@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "grunt build",
-    "lint": "eslint \"source/_js-source/**/*.js\""
+    "lint": "eslint \"src/scripts/**/*.js\""
   },
   "dependencies": {
     "font-awesome": "^4.7.0",

@@ -33,5 +33,16 @@
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "import/no-amd": "off",
     "strict": "off"
-  }
+  },
+
+  "overrides": [
+    {
+      "files": ["Gruntfile.js"],
+      "env": {
+        "browser": false,
+        "node": true,
+        "amd": false
+      }
+    }
+  ]
 }
