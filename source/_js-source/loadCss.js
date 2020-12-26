@@ -1,18 +1,17 @@
 'use strict';
 
- /**
-  * @callback LoadCssFn
-  * @param {string} url
-  * @param {(e: HTMLLinkElement) => any} node
-  * @returns {Promise<HTMLLinkElement>}
-  */
-
+/**
+ * @callback LoadCssFn
+ * @param {string} url
+ * @param {(e: HTMLLinkElement) => any} node
+ * @returns {Promise<HTMLLinkElement>}
+ */
 
 define(() => {
-  const head = document.head;
+  const { head } = document;
   return loadCss;
 
-  ///////////////////
+  /// ////////////////
 
   /**
    * @type {LoadCssFn}
@@ -22,7 +21,7 @@ define(() => {
       const link = document.createElement('link');
       link.type = 'text/css';
       link.rel = 'stylesheet';
-      link.id = 'loadCss-' + Date.now();
+      link.id = `loadCss-${Date.now()}`;
       link.href = url;
       link.onload = () => {
         res(link);

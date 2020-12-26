@@ -11,7 +11,7 @@ function app($) {
   $('.circle-progress').each((i, node) => {
     $(node)
       .circleProgress({
-        value: parseInt(node.dataset.value, 10) / 100,
+        value: parseInt(node.dataset.value) / 100,
         size: 100,
         startAngle: -Math.PI / 2,
         fill: {

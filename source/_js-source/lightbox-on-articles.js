@@ -8,7 +8,7 @@ define(['jquery'], lightboxOnArticles);
 function lightboxOnArticles($) {
   $('.article-entry').each(applyLightBoxToImages);
 
-  //////////
+  ///
 
   /**
    * @param {number} i
@@ -18,7 +18,7 @@ function lightboxOnArticles($) {
     $('img', div).each(prepareImages);
     $('a[data-lightbox]', div).each(addRelPropertyOnLinks);
 
-    //////////////
+    ///
 
     /**
      * @param {number} j
@@ -37,11 +37,11 @@ function lightboxOnArticles($) {
     }
 
     /**
-     * @param {number} i
+     * @param {number} n
      * @param {HTMLAnchorElement} link
      */
-    function addRelPropertyOnLinks(i, link) {
-      link.rel = 'article' + i;
+    function addRelPropertyOnLinks(n, link) {
+      link.rel = `article${n}`;
     }
   }
 }
