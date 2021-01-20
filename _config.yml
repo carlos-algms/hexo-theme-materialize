@@ -12,11 +12,11 @@ fancybox: true
 # Sidebar
 sidebar: right
 widgets:
-- category
-- tag
-- tagcloud
-- archive
-- recent_posts
+  - category
+  - tag
+  - tagcloud
+  - archive
+  - recent_posts
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
@@ -28,12 +28,5 @@ index_widgets:
 archive_type: 'monthly'
 show_count: false
 
-# Miscellaneous
-favicon: images/favicon
-twitter:
-google_plus:
-fb_admins:
-fb_app_id:
-
 stylus:
-  compress: false
+  compress: true

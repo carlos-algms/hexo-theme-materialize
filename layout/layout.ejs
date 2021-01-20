@@ -31,18 +31,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+  <%- open_graph({
+    twitter_id: theme.twitter || config.twitter,
+    google_plus: theme.google_plus || config.google_plus,
+    fb_admins: theme.fb_admins || config.fb_admins,
+    fb_app_id: theme.fb_app_id || config.fb_app_id
+  }); %>
 
   <% if ( theme.rss ) { %>
     <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml" />
   <% } %>
 
-  <% if ( theme.favicon ) { %>
-  <!--[if lte IE 10 ]><%- favicon_tag(theme.favicon + '.ico') %><![endif]-->
-  <!--[if !IE]><!-->
-  <%- favicon_tag(theme.favicon + '.png') %>
+  <%
+  var favicon = theme.favicon || config.favicon;
 
-  <meta name="msapplication-TileImage" content="<%- url_for( theme.favicon + '.png') %>"/>
+  if ( favicon ) { %>
+  <!--[if lte IE 10 ]><%- favicon_tag(favicon + '.ico') %><![endif]-->
+  <!--[if !IE]><!-->
+  <%- favicon_tag(favicon + '.png') %>
+
+  <meta name="msapplication-TileImage" content="<%- url_for( favicon + '.png') %>"/>
   <meta name="msapplication-TileColor" content="#000000"/>
 
   <link rel="apple-touch-icon" href="<%- url_for('images/apple-touch-icon-57x57.png') %>" />
@@ -50,7 +58,7 @@
   <link rel="apple-touch-icon" sizes="114x114" href="<%- url_for('images/apple-touch-icon-114x114.png') %>" />
   <link rel="apple-touch-icon" sizes="144x144" href="<%- url_for('images/apple-touch-icon-144x144.png') %>" />
 
-  <link rel="icon" sizes="256x256" href="<%- url_for( theme.favicon + '.png' ) %>" />
+  <link rel="icon" sizes="256x256" href="<%- url_for( favicon + '.png' ) %>" />
   <!--<![endif]-->
   <% } %>
 
