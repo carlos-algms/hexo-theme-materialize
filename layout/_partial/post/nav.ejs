@@ -1,20 +1,30 @@
 <% if (post.prev || post.next){ %>
 <nav id="article-nav" class="white">
   <div class="nav-wrapper">
-    <ul class="row">
+    <ul>
     <% if (post.prev) { %>
-      <li class="col s6">
-        <a href="<%- url_for(post.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap grey-text text-darken-1 truncate">
+      <li id="article-nav-newer-container">
+        <a
+          href="<%- url_for(post.prev.path) %>"
+          id="article-nav-newer"
+          class="article-nav-link-wrap grey-text text-darken-1"
+          title="<%= post.prev.title %>"
+        >
           <i class="fa fa-arrow-left"></i>
-          <span class="article-nav-title"><%= post.prev.title %></span>
+          <span class="article-nav-title truncate"><%= post.prev.title %></span>
         </a>
       </li>
     <% } %>
 
     <% if (post.next) { %>
-      <li class="col s6">
-        <a href="<%- url_for(post.next.path) %>" id="article-nav-older" class="article-nav-link-wrap grey-text text-darken-1 right-align truncate">
-          <span class="article-nav-title"><%= post.next.title %></span>
+      <li id="article-nav-older-container">
+        <a
+          href="<%- url_for(post.next.path) %>"
+          id="article-nav-older"
+          class="article-nav-link-wrap grey-text text-darken-1 right-align"
+          title="<%= post.next.title %>"
+        >
+          <span class="article-nav-title truncate"><%= post.next.title %></span>
           <i class="fa fa-arrow-right"></i>
         </a>
       </li>

@@ -351,3 +351,40 @@ $article-share-link
 .archives .header
   font-size: 1.5em;
   margin: 0;
+
+
+///////
+
+#article-nav {
+  .article-nav-link-wrap {
+    display: flex;
+    padding: 0 0.5rem;
+
+    > i {
+      flex: 0 0 auto;
+    }
+
+    > span {
+      flex: 1 1 auto;
+    }
+  }
+
+  #article-nav-newer i {
+    margin-right: 0.5rem;
+  }
+
+  #article-nav-older i {
+    margin-left: 0.5rem;
+  }
+
+  ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    grid-column-gap: 0;
+
+    li {
+      float: none;
+    }
+  }
+}
