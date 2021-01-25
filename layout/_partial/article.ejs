@@ -16,7 +16,22 @@
 
             <div class="article-meta">
               <i class="fa fa-calendar"></i>
-              <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, 'MMM DD, YYYY') %></time>
+              Published:
+              <time
+                datetime="<%= date_xml(post.date) %>"
+                itemprop="datePublished"
+                title="Date published"
+              ><%= date(post.date, 'MMM DD, YYYY') %></time>
+
+              <% if ( !post.date.isSame(post.updated) ) { %>
+                -
+                Updated:
+                <time
+                  datetime="<%= date_xml(post.updated) %>"
+                  itemprop="dateModified"
+                  title="Date updated"
+                ><%= date(post.updated, 'MMM DD, YYYY') %></time>
+              <% } %>
             </div>
           </header>
 
@@ -76,9 +91,7 @@
   <% if (config.disqus_shortname) { %>
   <script>
     var disqus_shortname = '<%= config.disqus_shortname %>';
-    <% if ( page.permalink ) { %>
-    var disqus_url = '<%= page.permalink %>';
-    <% } %>
+    var disqus_url = '<%= page.permalink %>' || undefined;
     (function(){
       var dsq = document.createElement('script');
       dsq.type = 'text/javascript';
