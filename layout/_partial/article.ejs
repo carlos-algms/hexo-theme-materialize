@@ -14,25 +14,27 @@
               <%- partial('post/title', {class_name: 'article-title'}) %>
           <% } %>
 
-            <div class="article-meta">
-              <i class="fa fa-calendar"></i>
-              Published:
-              <time
-                datetime="<%= date_xml(post.date) %>"
-                itemprop="datePublished"
-                title="Date published"
-              ><%= date(post.date, 'MMM DD, YYYY') %></time>
-
-              <% if ( !post.date.isSame(post.updated) ) { %>
-                -
-                Updated:
+            <% if (post.layout === 'post') { %>
+              <div class="article-meta">
+                <i class="fa fa-calendar"></i>
+                Published:
                 <time
-                  datetime="<%= date_xml(post.updated) %>"
-                  itemprop="dateModified"
-                  title="Date updated"
-                ><%= date(post.updated, 'MMM DD, YYYY') %></time>
-              <% } %>
-            </div>
+                  datetime="<%= date_xml(post.date) %>"
+                  itemprop="datePublished"
+                  title="Date published"
+                ><%= date(post.date, 'MMM DD, YYYY') %></time>
+
+                <% if ( !post.date.isSame(post.updated) ) { %>
+                  -
+                  Updated:
+                  <time
+                    datetime="<%= date_xml(post.updated) %>"
+                    itemprop="dateModified"
+                    title="Date updated"
+                  ><%= date(post.updated, 'MMM DD, YYYY') %></time>
+                <% } %>
+              </div>
+            <% } %>
           </header>
 
 
