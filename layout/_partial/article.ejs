@@ -88,7 +88,7 @@
 </div>
 
 
-  <% if (config.disqus_shortname) { %>
+  <% if (config.disqus_shortname && !env.silent) { %>
   <script>
     var disqus_shortname = '<%= config.disqus_shortname %>';
     var disqus_url = '<%= page.permalink %>' || undefined;
