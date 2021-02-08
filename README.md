@@ -78,24 +78,26 @@ category_dir: blog/categories
 
 ## Post Configurations
 
-Each post supports the standard `title`, `date`, `categories`, `tags`.
+Each post supports the standard `title`, `date`, `updated`, `categories`, and `tags`.
 
 Example:
 
 ```yaml
 title: Welcome to Materialize
 tags: ['ThisIsATag', 'Intro', 'Welcome']
+date: 2017-04-08 23:32:59
+updated: 2021-01-25 10:00:00
 ---
 
 ```
 
 ## Theme Configuration
 
-The theme's global configuration is done in `/themes/materialize/_config.yml`.
+The theme's configuration is done on your project's root folder in the file `_config.yml`.
 
 ### Menu
 
-The menu is configured under the theme's `_config.yml`.
+The menu items listed on the top-right
 
 ```yaml
 # Header
@@ -106,22 +108,21 @@ menu:
 
 **PS:** The `Blog` menu **must match** your `archive_dir` config.
 
-## Individual Settings related to you only
-
-Settings that will identify you and your site **MUST** be set on your project root folder in the file `_config.yml`.
-
 ### Google Analytics
 
-The Google Analytics Tracking ID is configured in your root `_config.yml`.
+If set, page-views will be tracked automatically.
 
 ```yaml
 # Google Analytics Tracking ID
 google_analytics: UA-XXXXXX-Y
 ```
 
+**PS:** It has to start with `UA-` because the current implementation is the [analytics.js](https://developers.google.com/analytics/devguides/collection/analyticsjs)
+
 ### Favicon
 
-Favicon config is also under your root `_config.yml`
+Favicon file without the extension.  
+Please, provide a `png` file AND a `.ico` for legacy browsers.
 
 ```yaml
 favicon: images/favicon
@@ -129,15 +130,31 @@ favicon: images/favicon
 
 ### Social Media
 
-Also under your root `_config.yml`,  
-it will create the openGraph tags on the `<head>` of your site.
+When set, it will create the openGraph tags in the `<head>` of your site.
 
 ```yaml
-twitter:
-google_plus:
-fb_admins:
-fb_app_id:
+twitter:  userXX
+google_plus: user-XX
+fb_admins: idem
+fb_app_id: idem
 ```
+
+### RSS
+In case you ara generating you XML file, use this settings to create a link to the xml file in the `<head>` tag.
+
+```yaml
+rss: /atom.xml
+```
+
+### Excerpt link
+
+The "Read More +" label used in the button.
+
+```yaml
+excerpt_link: Read More
+```
+
+**PS:** To create the "Read More" button, just add `<!-- more -->` anywhere in your post.
 
 ## Creator
 
