@@ -16,7 +16,10 @@
     "inject": true,
     "should": true,
     "waitElementVisible": true,
-    "requirejs": true
+    "requirejs": true,
+    "hexo": true,
+    "theme": true,
+    "config": true
   },
 
   "parserOptions": {

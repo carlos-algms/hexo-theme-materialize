@@ -1,13 +1,23 @@
-# Header
+## This set of configs WILL BE read from yours site's _config.yml if available,
+# otherwise the default values will be used
+
+#  Header menu items
 menu:
   Home: /
   Blog: /blog
 
 rss: /atom.xml
 
-# Content
 excerpt_link: Read More
-fancybox: true
+
+
+# widget behavior
+archive_type: 'monthly'
+show_count: false
+
+
+# ### The next set of settings are Theme related an will NOT be read from your site's _config
+# you still can change the values here if you wish.
 
 # Sidebar
 sidebar: right
@@ -23,10 +33,6 @@ index_widgets:
 # - category
 # - tagcloud
 # - archive
-
-# widget behavior
-archive_type: 'monthly'
-show_count: false
 
 stylus:
   compress: true

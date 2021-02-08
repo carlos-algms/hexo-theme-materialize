@@ -32,18 +32,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
   <%- open_graph({
-    twitter_id: theme.twitter || config.twitter,
-    google_plus: theme.google_plus || config.google_plus,
-    fb_admins: theme.fb_admins || config.fb_admins,
-    fb_app_id: theme.fb_app_id || config.fb_app_id
+    twitter_id: getConfig('twitter'),
+    google_plus: getConfig('google_plus'),
+    fb_admins: getConfig('fb_admins'),
+    fb_app_id: getConfig('fb_app_id')
   }); %>
 
-  <% if ( theme.rss ) { %>
-    <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml" />
+  <% if (getConfig('rss')) { %>
+    <link rel="alternate" href="<%- getConfig('rss') %>" title="<%= config.title %>" type="application/atom+xml" />
   <% } %>
 
   <%
-  var favicon = theme.favicon || config.favicon;
+  var favicon = getConfig('favicon');
 
   if ( favicon ) { %>
   <!--[if lte IE 10 ]><%- favicon_tag(favicon + '.ico') %><![endif]-->
@@ -94,7 +94,7 @@
         &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
 
         <div class="right">
-          Powered by <a href="http://hexo.io/" rel="nofollow noopener noreferrer" class="white-text" target="_blank">Hexo</a>
+          Powered by <a href="http://hexo.io/" rel="nofollow noopener" class="white-text" target="_blank">Hexo</a>
         </div>
       </div>
     </div>

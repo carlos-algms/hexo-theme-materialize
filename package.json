@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-materialize",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "build": "grunt build",

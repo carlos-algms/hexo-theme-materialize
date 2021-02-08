@@ -7,6 +7,6 @@
   },
   "exclude": ["node_modules", "public", "source/js", ".tmp"],
   "typeAcquisition": {
-    "include": ["jquery", "requirejs", "node", "materialize-css"]
+    "include": ["hexo", "jquery", "requirejs", "node", "materialize-css"]
   }
 }

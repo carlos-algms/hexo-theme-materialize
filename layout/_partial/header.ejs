@@ -1,3 +1,4 @@
+<% const menuItems = getConfig('menu'); %>
 <div class="navbar-fixed">
   <nav id="main-navbar" class="grey lighten-5 z-depth-0" role="navigation">
     <div class="nav-wrapper container">
@@ -8,9 +9,9 @@
       </a>
 
       <ul class="right hide-on-med-and-down">
-        <% for (var i in theme.menu){ %>
+        <% for (var i in menuItems){ %>
           <li>
-            <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+            <a class="main-nav-link" href="<%- url_for(menuItems[i]) %>"><%= i %></a>
           </li>
         <% } %>
       </ul>
@@ -23,9 +24,9 @@
 </div>
 
 <ul id="nav-mobile" class="sidenav">
-  <% for (var i in theme.menu){ %>
+  <% for (var i in menuItems){ %>
   <li>
-    <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+    <a class="main-nav-link" href="<%- url_for(menuItems[i]) %>"><%= i %></a>
   </li>
   <% } %>
 </ul>
