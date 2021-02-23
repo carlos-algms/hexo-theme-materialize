@@ -1,20 +1,7 @@
-'use strict';
+import $ from 'jquery';
 
-define(['jquery'], lightboxOnArticles);
-
-/**
- * @param {JQueryStatic} $
- */
-function lightboxOnArticles($) {
-  $('.article-entry').each(applyLightBoxToImages);
-
-  ///
-
-  /**
-   * @param {number} i
-   * @param {HTMLDivElement} div
-   */
-  function applyLightBoxToImages(i, div) {
+export default function lightboxOnArticles() {
+  $('.article-entry').each((i, div) => {
     $('img', div).each(prepareImages);
     $('a[data-lightbox]', div).each(addRelPropertyOnLinks);
 
@@ -43,5 +30,5 @@ function lightboxOnArticles($) {
     function addRelPropertyOnLinks(n, link) {
       link.rel = `article${n}`;
     }
-  }
+  });
 }

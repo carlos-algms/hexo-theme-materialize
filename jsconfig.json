@@ -3,7 +3,9 @@
     "target": "es6",
     "checkJs": true,
     "lib": ["es2019", "dom"],
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "module": "umd"
   },
   "exclude": ["node_modules", "public", "source/js", ".tmp"],
   "typeAcquisition": {

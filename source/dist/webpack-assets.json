@@ -1,0 +1,18 @@
+{
+  "app": {
+    "js": [
+      "193-e2d62c345258b9529dd6.js",
+      "266-a77d3ffa61b43f6a0cf8.js",
+      "app-8869377c00833c2dbc8e.js"
+    ]
+  },
+  "home": {
+    "js": [
+      "193-e2d62c345258b9529dd6.js",
+      "home-15fba6d74bb4d4f026cc.js"
+    ]
+  },
+  "blog": {
+    "js": "blog-31d6cfe0d16ae931b73c.js"
+  }
+}
