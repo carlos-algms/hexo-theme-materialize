@@ -3,6 +3,8 @@ const { EnvironmentPlugin } = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 const AssetsPlugin = require('assets-webpack-plugin');
+const autoPrefixed = require('autoprefixer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /**
  * @type {any}
@@ -42,7 +44,7 @@ const webpackFactory = (envFlags, argv) => {
       path: path.join(__dirname, 'source', 'dist'),
       filename: `[name]${hash}.js`,
       assetModuleFilename: `images/[name]${hash}[ext][query]`,
-      chunkFilename: `chunk-[name]${hash}.js`,
+      chunkFilename: `chunk-[name]${hash}[ext]`,
     },
     devtool: isProduction ? 'source-map' : 'eval-source-map',
     plugins: [
@@ -52,6 +54,9 @@ const webpackFactory = (envFlags, argv) => {
         BUILD_DATE: formatDate(),
       }),
       assetsPluginInstance,
+      new MiniCssExtractPlugin({
+        filename: `[name]${hash}.css`
+      }),
     ].filter(Boolean),
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
@@ -74,6 +79,37 @@ const webpackFactory = (envFlags, argv) => {
           // fonts
           test: /\.(eot|ttf|woff2?)/i,
           type: 'asset/resource',
+        },
+        {
+          test: /\.(css|styl)$/i,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
+                postcssOptions: {
+                  plugins: [autoPrefixed],
+                },
+              },
+            },
+            {
+              loader: 'stylus-loader',
+              options: {
+                sourceMap: true,
+                stylusOptions: {
+                  includeCSS: true,
+                  compress: false,
+                },
+              },
+            },
+          ],
         },
       ],
     },
