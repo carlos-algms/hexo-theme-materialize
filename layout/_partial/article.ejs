@@ -1,4 +1,8 @@
-<% if ( is_post() || is_page() ) { %>
+<%
+// TODO change post variable name to page to match Hexo Docs: https://hexo.io/docs/variables
+webpackAssets('blog');
+
+if ( is_post() || is_page() ) { %>
 <div class="container">
   <div class="row">
     <div class="col s12">
@@ -10,8 +14,8 @@
           <%- partial('post/gallery') %>
 
           <header class="article-header">
-          <% if (post.link || post.title){ %>
-              <%- partial('post/title', {class_name: 'article-title'}) %>
+          <% if (post.link || post.title) { %>
+              <%- partial('post/title', { class_name: 'article-title' }) %>
           <% } %>
 
             <% if (post.layout === 'post') { %>

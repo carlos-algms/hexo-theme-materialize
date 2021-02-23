@@ -5,7 +5,7 @@
   <%
   var title = page.title || '';
 
-  if ( is_archive() ) { //TODO trocar para blog e o número da página
+  if ( is_archive() ) {
     title = 'Blog';
 
     if ( is_month() ) {
@@ -68,16 +68,9 @@
   <%- css('css/style') %>
   <%- partial('_partial/google-analytics') %>
 
-  <%- js('js/vendors') %>
+  <!-- webpackAssetsInsert:css -->
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7,fetch,Object.entries,Object.values&flags=gated"></script>
-
-  <script>
-    define('jquery', function () {
-      return window.jQuery;
-    });
-  </script>
-
 
 </head>
 <body>
@@ -100,7 +93,7 @@
     </div>
   </footer>
 
-  <%- js('js/app') %>
+  <!-- webpackAssetsInsert:js -->
 
 </body>
 </html>

@@ -19,20 +19,5 @@ show_count: false
 # ### The next set of settings are Theme related an will NOT be read from your site's _config
 # you still can change the values here if you wish.
 
-# Sidebar
-sidebar: right
-widgets:
-  - category
-  - tag
-  - tagcloud
-  - archive
-  - recent_posts
-
-# display widgets at the bottom of index pages (pagination == 2)
-index_widgets:
-# - category
-# - tagcloud
-# - archive
-
 stylus:
   compress: true
