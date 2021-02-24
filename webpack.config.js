@@ -34,16 +34,16 @@ const webpackFactory = (envFlags, argv) => {
 
   return {
     target: ['web'],
-    // stats: 'minimal',
     entry: {
       app: path.join(__dirname, 'src', 'App', 'app.js'),
       home: path.join(__dirname, 'src', 'App', 'home.js'),
       blog: path.join(__dirname, 'src', 'App', 'blog.js'),
     },
     output: {
-      path: path.join(__dirname, 'source', 'dist'),
+      publicPath: '/generated/',
+      path: path.join(__dirname, 'source', 'generated'),
       filename: `[name]${hash}.js`,
-      assetModuleFilename: `images/[name]${hash}[ext][query]`,
+      assetModuleFilename: `assets/[name]${hash}[ext][query]`,
       chunkFilename: `chunk-[name]${hash}[ext]`,
     },
     devtool: isProduction ? 'source-map' : 'eval-source-map',
@@ -55,7 +55,7 @@ const webpackFactory = (envFlags, argv) => {
       }),
       assetsPluginInstance,
       new MiniCssExtractPlugin({
-        filename: `[name]${hash}.css`
+        filename: `[name]${hash}.css`,
       }),
     ].filter(Boolean),
     resolve: {
@@ -74,14 +74,41 @@ const webpackFactory = (envFlags, argv) => {
           // images
           test: /\.(png|jpe?g|gif|svg)/i,
           type: 'asset/resource',
+          generator: {
+            filename: `images/[name]${hash}[ext][query]`
+          }
         },
         {
           // fonts
-          test: /\.(eot|ttf|woff2?)/i,
+          test: /\.(eot|otf|ttf|woff2?)|font.*\.svg/i,
           type: 'asset/resource',
+          generator: {
+            filename: `fonts/[name]${hash}[ext][query]`
+          }
         },
         {
-          test: /\.(css|styl)$/i,
+          test: /\.(css)$/i,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
+                postcssOptions: {
+                  plugins: [autoPrefixed],
+                },
+              },
+            },
+          ],
+        },
+        {
+          test: /\.(styl)$/i,
           use: [
             MiniCssExtractPlugin.loader,
             {
@@ -105,7 +132,6 @@ const webpackFactory = (envFlags, argv) => {
                 sourceMap: true,
                 stylusOptions: {
                   includeCSS: true,
-                  compress: false,
                 },
               },
             },

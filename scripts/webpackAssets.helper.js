@@ -6,7 +6,7 @@ const fs = require('fs');
  * @type {Record<string, Record<'js' | 'css', string | string[]>>}
  */
 const assets = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '..', 'source', 'dist', 'webpack-assets.json'), { encoding: 'utf-8' }),
+  fs.readFileSync(path.join(__dirname, '..', 'source', 'generated', 'webpack-assets.json'), { encoding: 'utf-8' }),
 );
 
 hexo.extend.helper.register(
@@ -60,8 +60,8 @@ hexo.extend.filter.register(
      */
     const { webpackAssetsJS, webpackAssetsCss } = site;
 
-    const scripts = Array.from(webpackAssetsJS).map((src) => js(`dist/${src}`)).join('');
-    const styles = Array.from(webpackAssetsCss).map((src) => css(`dist/${src}`)).join('');
+    const scripts = Array.from(webpackAssetsJS).map((src) => js(src)).join('');
+    const styles = Array.from(webpackAssetsCss).map((src) => css(src)).join('');
 
     return enrichedSource
       .replace('<!-- webpackAssetsInsert:js -->', scripts)

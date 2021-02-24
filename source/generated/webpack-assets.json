@@ -1,0 +1,42 @@
+{
+  "app": {
+    "js": [
+      "/generated/193-e2d62c345258b9529dd6.js",
+      "/generated/668-d7d51d13bcd7ac2abcc7.js",
+      "/generated/app-00d1403e3ad4386cad2e.js"
+    ],
+    "css": [
+      "/generated/668-8ba6742167ba420f699c.css",
+      "/generated/app-da20bb8e781d1cdeb855.css"
+    ]
+  },
+  "home": {
+    "js": [
+      "/generated/193-e2d62c345258b9529dd6.js",
+      "/generated/home-15fba6d74bb4d4f026cc.js"
+    ]
+  },
+  "blog": {
+    "js": [
+      "/generated/193-e2d62c345258b9529dd6.js",
+      "/generated/blog-a2217f1d9e016f5dd951.js"
+    ],
+    "css": "/generated/blog-e2c01bb89d66e57d0629.css"
+  },
+  "": {
+    "svg": "/generated/fonts/fontawesome-webfont-c1e38fd9e0e74ba58f7a.svg?v=4.7.0",
+    "eot": [
+      "/generated/fonts/fontawesome-webfont-cf88812dc8f4d812c0ef.eot",
+      "/generated/fonts/fontawesome-webfont-cf88812dc8f4d812c0ef.eot?v=4.7.0"
+    ],
+    "ttf": "/generated/fonts/fontawesome-webfont-1e59d2330b4c6deb84b3.ttf?v=4.7.0",
+    "woff": "/generated/fonts/fontawesome-webfont-f691f37e57f04c152e23.woff?v=4.7.0",
+    "woff2": "/generated/fonts/fontawesome-webfont-20fd1704ea223900efa9.woff2?v=4.7.0",
+    "gif": "/generated/images/loading-f657825a2eeed04632b0.gif",
+    "png": [
+      "/generated/images/prev-0edc57ccafb3ea818597.png",
+      "/generated/images/next-62074ac70bd3cfc10445.png",
+      "/generated/images/close-0cfd6489536ec0987466.png"
+    ]
+  }
+}
