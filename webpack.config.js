@@ -5,6 +5,7 @@ const path = require('path');
 const AssetsPlugin = require('assets-webpack-plugin');
 const autoPrefixed = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 /**
  * @type {any}
@@ -30,6 +31,8 @@ const { version } = require('./package.json');
  */
 const webpackFactory = (envFlags, argv) => {
   const isProduction = argv.mode === 'production';
+  const isAnalyseMode = argv.analyze === true;
+
   const hash = isProduction ? '-[contenthash]' : '';
 
   return {
@@ -57,6 +60,10 @@ const webpackFactory = (envFlags, argv) => {
       new MiniCssExtractPlugin({
         filename: `[name]${hash}.css`,
       }),
+      isAnalyseMode
+        && new BundleAnalyzerPlugin({
+          analyzerPort: 9088,
+        }),
     ].filter(Boolean),
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],

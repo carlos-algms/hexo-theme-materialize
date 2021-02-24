@@ -6,6 +6,7 @@
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "build:watch": "webpack --mode development --watch",
+    "build:analyze": "npm run build -- --analyze",
     "lint": "eslint \"src/scripts/**/*.js\""
   },
   "dependencies": {
@@ -31,6 +32,7 @@
     "stylus": "^0.54.8",
     "stylus-loader": "^5.0.0",
     "webpack": "^5.23.0",
+    "webpack-bundle-analyzer": "^4.4.0",
     "webpack-cli": "^4.5.0"
   }
 }
