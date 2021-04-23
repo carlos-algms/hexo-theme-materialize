@@ -1,8 +1,8 @@
 # Welcome to Materialize Hexo Theme
 
-![Screenshot](https://raw.githubusercontent.com/carlos-algms/hexo-theme-materialize/master/source/images/_hexo-theme-materialize.jpg)
+![Screenshot](.github/images/_hexo-theme-materialize.jpg)
 
-[Live Demo Here](http://carlos-algms.github.io/)
+[Live Demo Here](https://carlos-algms.github.io/)
 
 <!-- more -->
 
@@ -19,10 +19,10 @@
 
 ## External libraries used
 
-- [Materialize CSS](http://materializecss.com/)
-- [Font Awesome](http://fontawesome.io/icons/)
+- [Materialize CSS](https://materializecss.com/)
+- [Font Awesome](https://fontawesome.com/icons/)
 - [Lightbox2](https://github.com/lokesh/lightbox2)
-- [jQuery Circle Progress](http://kottenator.github.io/jquery-circle-progress/)
+- [jQuery Circle Progress](https://kottenator.github.io/jquery-circle-progress/)
 
 ## Installation
 

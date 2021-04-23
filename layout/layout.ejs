@@ -5,7 +5,7 @@
   <%
   var title = page.title || '';
 
-  if ( is_archive() ) { //TODO trocar para blog e o número da página
+  if ( is_archive() ) {
     title = 'Blog';
 
     if ( is_month() ) {
@@ -62,22 +62,13 @@
   <!--<![endif]-->
   <% } %>
 
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro|Material+Icons|Raleway:400,300,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Material+Icons|Raleway:400,300,700" rel="stylesheet" type="text/css" />
 
-  <%- css('css/vendors') %>
-  <%- css('css/style') %>
+  <!-- webpackAssetsInsert:css -->
+
   <%- partial('_partial/google-analytics') %>
 
-  <%- js('js/vendors') %>
-
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7,fetch,Object.entries,Object.values&flags=gated"></script>
-
-  <script>
-    define('jquery', function () {
-      return window.jQuery;
-    });
-  </script>
-
 
 </head>
 <body>
@@ -100,7 +91,7 @@
     </div>
   </footer>
 
-  <%- js('js/app') %>
+  <!-- webpackAssetsInsert:js -->
 
 </body>
 </html>

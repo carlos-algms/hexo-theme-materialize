@@ -3,20 +3,12 @@
     "browser": true,
     "node": false,
     "es6": true,
-    "amd": true,
-    "mocha": true,
-    "jasmine": true,
-    "protractor": true
+    "amd": true
   },
 
   "extends": "airbnb-base",
 
   "globals": {
-    "sinon": true,
-    "inject": true,
-    "should": true,
-    "waitElementVisible": true,
-    "requirejs": true,
     "hexo": true,
     "theme": true,
     "config": true
@@ -24,7 +16,7 @@
 
   "parserOptions": {
     "ecmaVersion": 6,
-    "sourceType": "script"
+    "sourceType": "module"
   },
 
   "rules": {

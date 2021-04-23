@@ -1,13 +1,7 @@
-'use strict';
+import $ from 'jquery';
+import 'jquery-circle-progress';
 
-requirejs(['jquery', 'loadCss', 'share-post', 'lightbox-on-articles', 'lightbox'], app);
-
-/**
- * @param {JQueryStatic} $
- */
-function app($) {
-  $('.sidenav').sidenav();
-
+(function home() {
   $('.circle-progress').each((i, node) => {
     $(node)
       .circleProgress({
@@ -24,4 +18,4 @@ function app($) {
           .text((stepValue * 100).toFixed(0));
       });
   });
-}
+}());

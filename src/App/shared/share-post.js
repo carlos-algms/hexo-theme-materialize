@@ -1,13 +1,6 @@
-/* eslint-disable operator-linebreak */
+import $ from 'jquery';
 
-'use strict';
-
-define(['jquery'], sharePost);
-
-/**
- * @param {JQueryStatic} $
- */
-function sharePost($) {
+export default function sharePost() {
   const $body = $(document.body);
 
   $body
@@ -24,7 +17,7 @@ function sharePost($) {
   }
 
   /**
-   * @param {Event} e
+   * @param {JQuery.ClickEvent} e
    */
   function share(e) {
     e.stopPropagation();
@@ -60,17 +53,17 @@ function sharePost($) {
   function createShareBox(id, url) {
     const encodedUrl = encodeURIComponent(url);
 
-    const html = [
-      `<div id="${id}" class="article-share-box">`,
-      `<input class="article-share-box-input" value="${url}">`,
-      '<div class="article-share-links">',
-      `<a href="https://twitter.com/intent/tweet?url=${encodedUrl}" class="article-share-twitter" target="_blank" title="Twitter"></a>`,
-      `<a href="https://www.facebook.com/sharer.php?u=${encodedUrl}" class="article-share-facebook" target="_blank" title="Facebook"></a>`,
-      `<a href="http://pinterest.com/pin/create/button/?url=${encodedUrl}" class="article-share-pinterest" target="_blank" title="Pinterest"></a>`,
-      `<a href="https://plus.google.com/share?url=${encodedUrl}" class="article-share-google" target="_blank" title="Google+"></a>`,
-      '</div>',
-      '</div>',
-    ].join('');
+    const html = `
+    <div id="${id}" class="article-share-box">
+      <input class="article-share-box-input" value="${url}">
+      <div class="article-share-links">
+        <a href="https://twitter.com/intent/tweet?url=${encodedUrl}" class="article-share-twitter" target="_blank" title="Twitter"></a>
+        <a href="https://www.facebook.com/sharer.php?u=${encodedUrl}" class="article-share-facebook" target="_blank" title="Facebook"></a>
+        <a href="http://pinterest.com/pin/create/button/?url=${encodedUrl}" class="article-share-pinterest" target="_blank" title="Pinterest"></a>
+        <a href="https://plus.google.com/share?url=${encodedUrl}" class="article-share-google" target="_blank" title="Google+"></a>
+      </div>
+    </div>
+    `;
 
     const box = $(html);
 
@@ -79,21 +72,21 @@ function sharePost($) {
   }
 
   /**
-   * @param {Event} e
+   * @param {JQuery.ClickEvent} e
    */
   function stopPropagation(e) {
     e.stopPropagation();
   }
 
   /**
-   * @param {Event} e
+   * @param {JQuery.ClickEvent} e
    */
   function selectContent(e) {
-    $(e.currentTarget).select();
+    $(e.currentTarget).trigger('select');
   }
 
   /**
-   * @param {Event & { currentTarget: any }} e
+   * @param {JQuery.ClickEvent} e
    */
   function openShareWindow(e) {
     e.preventDefault();
