@@ -6,7 +6,7 @@
   var title = page.title || '';
 
   if ( is_archive() ) {
-    title = 'Blog';
+    title = __('layout.blog');
 
     if ( is_month() ) {
       title += ': ' + page.year + '/' + page.month;
@@ -15,13 +15,13 @@
     }
 
     if( page.current > 1 ) {
-      title += ' page ' + page.current;
+      title += ' ' + __('layout.page_n', page.current);
     }
 
   } else if ( is_category() ) {
-    title = 'Category: ' + page.category;
+    title = `${__('layout.category')}: ` + page.category;
   } else if ( is_tag() ) {
-    title = 'Tag: ' + page.tag;
+    title = `${__('layout.tag')}: ` + page.tag;
   }
 
   site.title = title;
@@ -73,7 +73,7 @@
 </head>
 <body>
 
-  <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+  <%- partial('_partial/header', null, { cache: !config.relative_link }) %>
 
   <div id="main-container">
     <%- body %>

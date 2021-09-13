@@ -1,12 +1,13 @@
-categories: Categories
-search: Search
-tags: Tags
-tagcloud: Tag Cloud
-tweets: Tweets
-prev: Prev
-next: Next
-comment: Comments
-archive_a: Archives
-archive_b: "Archives: %s"
-page: Page %d
-recent_posts: Recent Posts
+layout:
+  blog: Blog
+  category: Category
+  tag: Tag
+  prev_text: « Prev
+  next_text: Next »
+  comments: Comments
+  page_n: Page %d
+
+  article:
+    published: Published
+    updated: Updated
+    share: Share

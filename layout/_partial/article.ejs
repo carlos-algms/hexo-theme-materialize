@@ -21,7 +21,7 @@ if ( is_post() || is_page() ) { %>
             <% if (post.layout === 'post') { %>
               <div class="article-meta">
                 <i class="fa fa-calendar"></i>
-                Published:
+                <%= __('layout.article.published') %>:
                 <time
                   datetime="<%= date_xml(post.date) %>"
                   itemprop="datePublished"
@@ -30,7 +30,7 @@ if ( is_post() || is_page() ) { %>
 
                 <% if ( !post.date.isSame(post.updated) ) { %>
                   -
-                  Updated:
+                  <%= __('layout.article.updated') %>:
                   <time
                     datetime="<%= date_xml(post.updated) %>"
                     itemprop="dateModified"
@@ -61,9 +61,9 @@ if ( is_post() || is_page() ) { %>
           <% } %>
 
           <footer class="article-footer">
-            <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link">Share</a>
+            <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('layout.article.share') %></a>
             <% if (post.comments && config.disqus_shortname){ %>
-              <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link">Comments</a>
+              <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('layout.comments') %></a>
             <% } %>
             <%- partial('post/tag') %>
           </footer>
