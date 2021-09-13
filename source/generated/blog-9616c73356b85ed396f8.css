@@ -91,7 +91,7 @@ body.lb-disable-scrolling {
 
 .lb-nav a {
   outline: none;
-  background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-image: url(data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==);
 }
 
 .lb-prev, .lb-next {
@@ -195,4 +195,4 @@ body.lb-disable-scrolling {
 }
 
 
-/*# sourceMappingURL=blog-e2c01bb89d66e57d0629.css.map*/
+/*# sourceMappingURL=blog-9616c73356b85ed396f8.css.map*/
