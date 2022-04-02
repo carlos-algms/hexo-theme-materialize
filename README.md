@@ -15,7 +15,7 @@
 - Pages
 - Categories Support
 - About page
-- Stylus CSS preprocessor
+- Sass Scss
 
 ## External libraries used
 

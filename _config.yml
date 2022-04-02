@@ -18,6 +18,3 @@ show_count: false
 
 # ### The next set of settings are Theme related an will NOT be read from your site's _config
 # you still can change the values here if you wish.
-
-stylus:
-  compress: true

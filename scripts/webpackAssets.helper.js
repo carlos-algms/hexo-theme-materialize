@@ -2,12 +2,18 @@
 const path = require('path');
 const fs = require('fs');
 
-/**
- * @type {Record<string, Record<'js' | 'css', string | string[]>>}
- */
-const assets = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '..', 'source', 'generated', 'webpack-assets.json'), { encoding: 'utf-8' }),
-);
+function readAssetsFile() {
+  /**
+   * @type {Record<string, Record<'js' | 'css', string | string[]>>}
+   */
+  const assets = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '..', 'source', 'generated', 'webpack-assets.json'), {
+      encoding: 'utf-8',
+    }),
+  );
+
+  return assets;
+}
 
 hexo.extend.helper.register(
   'webpackAssets',
@@ -16,7 +22,7 @@ hexo.extend.helper.register(
    * @param {string} entryPointName
    */
   function webpackAssets(entryPointName) {
-    const entryPoint = assets[entryPointName];
+    const entryPoint = readAssetsFile()[entryPointName];
 
     if (!entryPoint) {
       return;
@@ -32,6 +38,7 @@ hexo.extend.helper.register(
 );
 
 hexo.extend.filter.register('template_locals', (locals) => {
+  const assets = readAssetsFile();
   const webpackAssetsJS = new Set(toArray(assets.app.js));
   const webpackAssetsCss = new Set(toArray(assets.app.css));
 
@@ -60,8 +67,12 @@ hexo.extend.filter.register(
      */
     const { webpackAssetsJS, webpackAssetsCss } = site;
 
-    const scripts = Array.from(webpackAssetsJS).map((src) => js(src)).join('');
-    const styles = Array.from(webpackAssetsCss).map((src) => css(src)).join('');
+    const scripts = Array.from(webpackAssetsJS)
+      .map((src) => js(src))
+      .join('');
+    const styles = Array.from(webpackAssetsCss)
+      .map((src) => css(src))
+      .join('');
 
     return enrichedSource
       .replace('<!-- webpackAssetsInsert:js -->', scripts)

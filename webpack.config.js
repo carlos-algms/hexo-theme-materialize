@@ -94,28 +94,7 @@ const webpackFactory = (envFlags, argv) => {
           }
         },
         {
-          test: /\.(css)$/i,
-          use: [
-            MiniCssExtractPlugin.loader,
-            {
-              loader: 'css-loader',
-              options: {
-                sourceMap: true,
-              },
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                sourceMap: true,
-                postcssOptions: {
-                  plugins: [autoPrefixed],
-                },
-              },
-            },
-          ],
-        },
-        {
-          test: /\.(styl)$/i,
+          test: /\.(css|s[ac]ss)$/i,
           use: [
             MiniCssExtractPlugin.loader,
             {
@@ -134,14 +113,8 @@ const webpackFactory = (envFlags, argv) => {
               },
             },
             {
-              loader: 'stylus-loader',
-              options: {
-                sourceMap: true,
-                stylusOptions: {
-                  includeCSS: true,
-                },
-              },
-            },
+              loader: 'sass-loader',
+            }
           ],
         },
       ],

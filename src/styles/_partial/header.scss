@@ -1,20 +1,19 @@
-
 #main-navbar {
   a {
-    color: color-default;
+    color: $color-default;
   }
 
   ul a:hover {
-    background none;
-    color: color-featured;
+    background: none;
+    color: $color-featured;
   }
 
   &,
   .nav-wrapper i,
   a.button-collapse,
   a.button-collapse i {
-    height: navbar-height;
-    line-height: navbar-height;
+    height: $navbar-height;
+    line-height: $navbar-height;
   }
 
   a.button-collapse {
@@ -23,7 +22,7 @@
 }
 
 .navbar-fixed {
-  height: navbar-height;
+  height: $navbar-height;
 }
 
 #logo-container {
@@ -35,7 +34,7 @@
 
   @media (max-width: 390px) {
     margin-left: 20px;
-    font-size: 34px
+    font-size: 34px;
   }
 
   > * {
@@ -45,6 +44,6 @@
 
   sub {
     font-size: 50%;
-    color: color-featured;
+    color: $color-featured;
   }
 }

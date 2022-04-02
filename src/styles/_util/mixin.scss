@@ -1,0 +1,19 @@
+// http://codepen.io/shshaw/full/gEiDt
+@mixin absolute-center($width, $height: $width) {
+  width: $width;
+  height: $height;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: ($width * -0.5);
+  margin-left: ($height * -0.5);
+}
+
+
+@mixin  clear-fix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

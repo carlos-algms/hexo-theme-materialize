@@ -5,7 +5,7 @@ import 'materialize-css';
 import 'font-awesome/css/font-awesome.css';
 import 'materialize-css/dist/css/materialize.css';
 
-import '../styles/style.styl';
+import '../styles/style.scss';
 
 (function app() {
   // https://materializecss.com/sidenav.html
