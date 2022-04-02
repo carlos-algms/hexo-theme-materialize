@@ -1,9 +1,9 @@
 {
   "app": {
     "js": [
-      "/generated/193-eb01f81907d23513bb6f.js",
+      "/generated/193-9ce673434dad958e9536.js",
       "/generated/668-d2e471b8dcd3790fc287.js",
-      "/generated/app-ab934fe8b0db342c4d01.js"
+      "/generated/app-693fcc0f93550eeaa995.js"
     ],
     "css": [
       "/generated/668-8ba6742167ba420f699c.css",
@@ -12,14 +12,14 @@
   },
   "home": {
     "js": [
-      "/generated/193-eb01f81907d23513bb6f.js",
-      "/generated/home-82e5c6f79670f4b8646e.js"
+      "/generated/193-9ce673434dad958e9536.js",
+      "/generated/home-a8b8e663ce281f1f7ae3.js"
     ]
   },
   "blog": {
     "js": [
-      "/generated/193-eb01f81907d23513bb6f.js",
-      "/generated/blog-11990083fd519e2cb9b8.js"
+      "/generated/193-9ce673434dad958e9536.js",
+      "/generated/blog-ded2f363deb425b73a50.js"
     ],
     "css": "/generated/blog-9616c73356b85ed396f8.css"
   },
