@@ -5,9 +5,10 @@
     "lib": ["es2019", "dom"],
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "module": "commonjs"
+    "module": "commonjs",
+    "allowJs": true,
   },
-  "exclude": ["node_modules", "public", "source/js", ".tmp"],
+  "include": ["src/**/*.js"],
   "typeAcquisition": {
     "include": ["hexo", "jquery", "requirejs", "node", "materialize-css"]
   }
