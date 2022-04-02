@@ -110,14 +110,19 @@ menu:
 
 ### Google Analytics
 
-If set, page-views will be tracked automatically.
+If set, page-views will be tracked automatically, in production only, not on local development
 
 ```yaml
 # Google Analytics Tracking ID
 google_analytics: UA-XXXXXX-Y
 ```
 
-**PS:** It has to start with `UA-` because the current implementation is the [analytics.js](https://developers.google.com/analytics/devguides/collection/analyticsjs)
+Or even the new G4 Analytics:
+
+```yaml
+# Google Analytics G4 Tracking ID
+google_analytics: G-XXXXXXXXXX
+```
 
 ### Favicon
 
