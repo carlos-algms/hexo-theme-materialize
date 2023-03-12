@@ -47,7 +47,7 @@ const webpackFactory = (envFlags, argv) => {
       path: path.join(__dirname, 'source', 'generated'),
       filename: `[name]${hash}.js`,
       assetModuleFilename: `assets/[name]${hash}[ext][query]`,
-      chunkFilename: `chunk-[name]${hash}[ext]`,
+      chunkFilename: `chunk-[name]${hash}.js`,
     },
     devtool: isProduction ? 'source-map' : 'eval-source-map',
     plugins: [
