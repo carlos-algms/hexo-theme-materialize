@@ -16,14 +16,22 @@
         <% } %>
       </ul>
 
-      <a href="#" data-target="nav-mobile" class="button-collapse sidenav-trigger">
-        <i class="fa fa-bars"></i>
+      <a
+        href="#"
+        role="button"
+        data-target="nav-mobile"
+        class="button-collapse sidenav-trigger"
+        aria-expanded="false"
+        aria-controls="nav-mobile"
+        aria-label="Open navigation menu"
+      >
+        <i class="fa fa-bars" aria-hidden="true"></i>
       </a>
     </div>
   </nav>
 </div>
 
-<ul id="nav-mobile" class="sidenav">
+<ul id="nav-mobile" class="sidenav" role="navigation">
   <% for (var i in menuItems){ %>
   <li>
     <a class="main-nav-link" href="<%- url_for(menuItems[i]) %>"><%= i %></a>

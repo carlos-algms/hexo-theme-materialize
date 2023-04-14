@@ -20,7 +20,7 @@ if ( is_post() || is_page() ) { %>
 
             <% if (post.layout === 'post') { %>
               <div class="article-meta">
-                <i class="fa fa-calendar"></i>
+                <i class="fa fa-calendar" aria-hidden="true"></i>
                 <%= __('layout.article.published') %>:
                 <time
                   datetime="<%= date_xml(post.date) %>"
@@ -55,7 +55,7 @@ if ( is_post() || is_page() ) { %>
               <a href="<%- url_for(post.path) %>#more" class="waves-effect waves-light btn red lighten-2">
                 <%= getConfig('excerpt_link') %>
                 &nbsp;
-                <i class="fa fa-plus-circle"></i>
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
               </a>
             </p>
           <% } %>
@@ -80,11 +80,9 @@ if ( is_post() || is_page() ) { %>
 
       <hr />
 
-      <section id="comments">
-        <div id="disqus_thread">
-          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
-      </section>
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
       <% } %>
 
 

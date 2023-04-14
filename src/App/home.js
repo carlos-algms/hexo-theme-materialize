@@ -1,7 +1,9 @@
 import $ from 'jquery';
-import 'jquery-circle-progress';
 
-(function home() {
+
+$(async function home() {
+  await import(/* webpackChunkName: "jquery-circle-progress" */'jquery-circle-progress');
+
   $('.circle-progress').each((i, node) => {
     $(node)
       .circleProgress({
@@ -18,4 +20,4 @@ import 'jquery-circle-progress';
           .text((stepValue * 100).toFixed(0));
       });
   });
-}());
+});

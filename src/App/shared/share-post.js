@@ -53,6 +53,8 @@ export default function sharePost() {
   function createShareBox(id, url) {
     const encodedUrl = encodeURIComponent(url);
 
+    // TODO maybe move it to a <template />
+    // TODO remove google plus
     const html = `
     <div id="${id}" class="article-share-box">
       <input class="article-share-box-input" value="${url}">
